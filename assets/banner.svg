@@ -1,0 +1,147 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="320" viewBox="0 0 1200 320" role="img" aria-label="open-gateway x402 vending machine">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#050510">
+        <animate attributeName="stop-color" values="#050510;#0a0520;#050510" dur="8s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="50%" stop-color="#0d1b2a">
+        <animate attributeName="stop-color" values="#0d1b2a;#1b103a;#0d1b2a" dur="8s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" stop-color="#000814">
+        <animate attributeName="stop-color" values="#000814;#001a2e;#000814" dur="8s" repeatCount="indefinite"/>
+      </stop>
+    </linearGradient>
+    <linearGradient id="neon" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00f5d4"/>
+      <stop offset="40%" stop-color="#7b2cbf"/>
+      <stop offset="70%" stop-color="#ff006e"/>
+      <stop offset="100%" stop-color="#ffbe0b"/>
+      <animateTransform attributeName="gradientTransform" type="translate" from="-1 0" to="1 0" dur="4s" repeatCount="indefinite"/>
+    </linearGradient>
+    <linearGradient id="glass" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1a1a2e" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#0f0f1a" stop-opacity="0.95"/>
+    </linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="b"/>
+      <feMerge>
+        <feMergeNode in="b"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="8" result="b"/>
+      <feMerge>
+        <feMergeNode in="b"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="320" fill="url(#bg)"/>
+
+  <!-- Grid lines -->
+  <g opacity="0.15" stroke="#00f5d4" stroke-width="0.5">
+    <line x1="0" y1="40" x2="1200" y2="40"/>
+    <line x1="0" y1="80" x2="1200" y2="80"/>
+    <line x1="0" y1="120" x2="1200" y2="120"/>
+    <line x1="0" y1="160" x2="1200" y2="160"/>
+    <line x1="0" y1="200" x2="1200" y2="200"/>
+    <line x1="0" y1="240" x2="1200" y2="240"/>
+    <line x1="0" y1="280" x2="1200" y2="280"/>
+  </g>
+
+  <!-- Floating particles -->
+  <circle cx="80" cy="60" r="2" fill="#00f5d4" opacity="0.8">
+    <animate attributeName="cy" values="60;40;60" dur="3s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.3;1;0.3" dur="3s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="1100" cy="90" r="2.5" fill="#ff006e" opacity="0.7">
+    <animate attributeName="cy" values="90;70;90" dur="4s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="200" cy="250" r="1.5" fill="#ffbe0b" opacity="0.9">
+    <animate attributeName="cx" values="200;230;200" dur="5s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="950" cy="200" r="2" fill="#7b2cbf" opacity="0.8">
+    <animate attributeName="cy" values="200;180;200" dur="3.5s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="500" cy="40" r="1.5" fill="#00f5d4">
+    <animate attributeName="opacity" values="0.2;1;0.2" dur="2s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- Vending machine body -->
+  <g transform="translate(80,40)">
+    <rect x="0" y="0" width="200" height="240" rx="16" fill="url(#glass)" stroke="#00f5d4" stroke-width="2" filter="url(#glow)"/>
+    <!-- Screen -->
+    <rect x="16" y="16" width="168" height="90" rx="8" fill="#001a12" stroke="#00f5d4" stroke-width="1.5"/>
+    <text x="100" y="48" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11" fill="#00f5d4" filter="url(#glow)">HTTP 402</text>
+    <text x="100" y="68" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="10" fill="#7bffb3">
+      PAYMENT REQUIRED
+      <animate attributeName="opacity" values="1;0.35;1" dur="1.4s" repeatCount="indefinite"/>
+    </text>
+    <text x="100" y="90" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="12" fill="#ffbe0b" font-weight="700">$0.001 USDC</text>
+
+    <!-- Product slots -->
+    <rect x="20" y="120" width="48" height="36" rx="4" fill="#111827" stroke="#7b2cbf" stroke-width="1"/>
+    <text x="44" y="142" text-anchor="middle" font-size="16">🧠</text>
+    <rect x="76" y="120" width="48" height="36" rx="4" fill="#111827" stroke="#ff006e" stroke-width="1"/>
+    <text x="100" y="142" text-anchor="middle" font-size="16">💹</text>
+    <rect x="132" y="120" width="48" height="36" rx="4" fill="#111827" stroke="#ffbe0b" stroke-width="1"/>
+    <text x="156" y="142" text-anchor="middle" font-size="16">🌐</text>
+
+    <!-- Coin slot pulse -->
+    <rect x="70" y="170" width="60" height="12" rx="3" fill="#0a0a12" stroke="#ffbe0b" stroke-width="1.5">
+      <animate attributeName="stroke" values="#ffbe0b;#fff;#ffbe0b" dur="1.2s" repeatCount="indefinite"/>
+    </rect>
+    <text x="100" y="205" text-anchor="middle" font-family="ui-monospace, monospace" font-size="9" fill="#94a3b8">INSERT STABLECOIN</text>
+
+    <!-- Dispense tray -->
+    <rect x="40" y="215" width="120" height="18" rx="4" fill="#050508" stroke="#00f5d4" stroke-width="1"/>
+    <!-- Ejected coin animation -->
+    <circle r="6" fill="#ffbe0b" filter="url(#softGlow)">
+      <animateMotion dur="2.4s" repeatCount="indefinite" path="M100,168 C100,168 100,200 100,224" keyPoints="0;1" keyTimes="0;1" calcMode="linear"/>
+      <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.15;0.85;1" dur="2.4s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- Title -->
+  <text x="340" y="110" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="52" font-weight="800" fill="url(#neon)" filter="url(#glow)">
+    open-gateway
+  </text>
+  <text x="340" y="155" font-family="ui-sans-serif, system-ui, sans-serif" font-size="22" fill="#e2e8f0">
+    A vending machine for data &amp; AI tools
+  </text>
+  <text x="340" y="190" font-family="ui-monospace, monospace" font-size="14" fill="#94a3b8">
+    no accounts · no API keys · no subscriptions
+  </text>
+
+  <!-- Live ticker chips -->
+  <g transform="translate(340,220)">
+    <rect width="110" height="36" rx="18" fill="#0a1628" stroke="#00f5d4" stroke-width="1.5"/>
+    <circle cx="18" cy="18" r="5" fill="#00f5d4">
+      <animate attributeName="opacity" values="1;0.3;1" dur="1s" repeatCount="indefinite"/>
+    </circle>
+    <text x="32" y="23" font-family="ui-monospace, monospace" font-size="12" fill="#00f5d4">BASE</text>
+
+    <rect x="120" width="130" height="36" rx="18" fill="#0a1628" stroke="#7b2cbf" stroke-width="1.5"/>
+    <circle cx="138" cy="18" r="5" fill="#c77dff">
+      <animate attributeName="opacity" values="1;0.3;1" dur="1.2s" repeatCount="indefinite"/>
+    </circle>
+    <text x="152" y="23" font-family="ui-monospace, monospace" font-size="12" fill="#c77dff">MEGAETH</text>
+
+    <rect x="260" width="130" height="36" rx="18" fill="#0a1628" stroke="#ff006e" stroke-width="1.5"/>
+    <circle cx="278" cy="18" r="5" fill="#ff006e">
+      <animate attributeName="opacity" values="1;0.3;1" dur="0.9s" repeatCount="indefinite"/>
+    </circle>
+    <text x="292" y="23" font-family="ui-monospace, monospace" font-size="12" fill="#ff6b9d">SOLANA</text>
+
+    <rect x="400" width="140" height="36" rx="18" fill="#0a1628" stroke="#ffbe0b" stroke-width="1.5"/>
+    <text x="420" y="23" font-family="ui-monospace, monospace" font-size="12" fill="#ffbe0b">82 APIs · x402</text>
+  </g>
+
+  <!-- Scanline -->
+  <rect x="0" width="1200" height="3" fill="#00f5d4" opacity="0.12">
+    <animate attributeName="y" values="0;320;0" dur="6s" repeatCount="indefinite"/>
+  </rect>
+</svg>
