@@ -1,0 +1,43 @@
+{
+  "name": "open-gateway",
+  "version": "1.0.0",
+  "description": "Open x402 gateway — pay-per-request vending machine for data and AI tools. No accounts, no API keys, no subscriptions.",
+  "type": "module",
+  "main": "src/server.js",
+  "bin": {
+    "open-gateway": "src/server.js"
+  },
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "test": "node --test test/**/*.test.js",
+    "test:gate": "node --test test/x402-gate.test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Solizardking/open-gateway.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Solizardking/open-gateway/issues"
+  },
+  "homepage": "https://github.com/Solizardking/open-gateway#readme",
+  "keywords": [
+    "x402",
+    "http-402",
+    "micropayments",
+    "stablecoin",
+    "api-gateway",
+    "open-gateway",
+    "usdc",
+    "solana",
+    "base"
+  ],
+  "author": "Solizardking",
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}

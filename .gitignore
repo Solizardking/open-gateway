@@ -1,0 +1,11 @@
+node_modules/
+vendor/
+X402Agent/
+.env
+.env.local
+.DS_Store
+npm-debug.log*
+*.log
+dist/
+coverage/
+.scratch/
